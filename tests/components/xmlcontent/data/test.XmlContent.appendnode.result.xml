@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <doc id="10" label="demo">
+        <foo></foo>
+    </doc>
+    <doc id="20"/>
+    <test id="20"/>
+</root>

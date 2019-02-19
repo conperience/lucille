@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="lucille" default="build" basedir=".">
+    <target name="setup" depends="clean,generate-autoloader"/>
+    <target name="build" depends="setup,lint,test"/>
+    
+    <target name="clean" unless="clean.done" description="Clean up and create artifact directories">
+        <delete dir="${basedir}/build/coverage"/>
+        <mkdir dir="${basedir}/build/coverage"/>
+        <property name="clean.done" value="true"/>
+    </target>
+    
+    <target name="generate-autoloader" description="Generate autoload.php using phpab">
+        <exec executable="phpab" taskname="phpab">
+            <arg value="--output"/>
+            <arg path="${basedir}/autoload.php"/>
+            <arg path="${basedir}/src"/>
+        </exec>
+    </target>
+    
+    <target name="lint">
+        <apply executable="php" failonerror="true">
+            <arg value="-l" />
+            
+            <fileset dir="${basedir}/src">
+                <include name="**/*.php" />
+                <modified />
+            </fileset>
+            
+            <fileset dir="${basedir}/tests">
+                <include name="**/*.php" />
+                <modified />
+            </fileset>
+        </apply>
+    </target>
+    
+    <target name="test" depends="generate-autoloader" description="Run tests">
+        <exec executable="phpunit" taskname="phpunit"/>
+    </target>
+    
+</project>

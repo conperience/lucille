@@ -1,0 +1,11 @@
+.DS_Store
+/.buildpath
+/.project
+/.settings
+/.idea
+/bin
+/build
+/vendor
+/phpunit.xml
+/phpdox.xml
+cache.properties

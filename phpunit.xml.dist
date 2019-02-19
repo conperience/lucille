@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit backupGlobals="false"
+         backupStaticAttributes="false"
+         verbose="true"
+         bootstrap="tests/bootstrap.php"
+         forceCoversAnnotation="true">
+    
+    <testsuites>
+        <testsuite name="lucille">
+            <directory suffix=".php">tests</directory>
+        </testsuite>
+    </testsuites>
+    
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">src</directory>
+        </whitelist>
+    </filter>
+    
+    <logging>
+        <log type="coverage-html" target="build/coverage/html"/>
+        <log type="coverage-xml" target="build/coverage/xml"/>
+    </logging>
+    
+</phpunit>

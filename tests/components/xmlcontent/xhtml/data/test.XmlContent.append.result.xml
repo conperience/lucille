@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <n1 id="n1">
+        <root>
+            <demo>
+                <foo label="test"/>
+            </demo>
+        </root>
+    </n1>
+</root>

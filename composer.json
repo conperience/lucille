@@ -1,0 +1,26 @@
+{
+  "name": "conperience/lucille",
+  "description" : "Lightweight HTTP abstraction",
+  "license" : "BSD-3-Clause",
+  "authors" : [
+    {
+      "name" : "Andreas Habel",
+      "email" : "mail@ahabel.de",
+      "role" : "Developer"
+    }
+  ],
+  "require" : {
+    "php" : "^7.1"
+  },
+  "suggest": {
+    "ext-dom" : "*",
+    "ext-xsl" : "*"
+  },
+  "autoload": {
+    "classmap": [
+      "src/"
+    ]
+  },
+  "minimum-stability" : "stable",
+  "prefer-stable" : true
+}
