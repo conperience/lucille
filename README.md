@@ -205,33 +205,5 @@ So when building complex websites or API projects these components may not fit y
 - [XML and XHTML Content](./docs/components.md)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+## Contributing
+Lucille and its Components are open source projects released under the BSD license. You are welcome to join the development team!
