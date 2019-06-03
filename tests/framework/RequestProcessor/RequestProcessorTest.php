@@ -12,6 +12,7 @@ namespace Lucille\UnitTests;
 require_once __DIR__ . '/data.php';
 
 use Lucille\Components\Xml\XhtmlResponse;
+use Lucille\Exceptions\UnsupportedRoutingChainException;
 use Lucille\Header\HeaderCollection;
 use Lucille\Request\Body\EmptyRequestBody;
 use Lucille\Request\DeleteRequest;
@@ -123,10 +124,10 @@ class RequestProcessorTest extends TestCase {
      * @covers ::addRoutingChain
      * @uses   \Lucille\Exceptions\UnsupportedRoutingChainException
      * @uses   \Lucille\Exceptions\LucilleException
-     *                                               
-     * @expectedException \Lucille\Exceptions\UnsupportedRoutingChainException
      */
     public function testAddUnsupportedRoutingChainThrowsException() {
+        $this->expectException(UnsupportedRoutingChainException::class);
+        
         $proc = new RequestProcessor();
         $proc->addRoutingChain(new InvalidRoutingChain());
     }
@@ -324,12 +325,12 @@ class RequestProcessorTest extends TestCase {
      * @uses   \Lucille\Routing\ResultRouter
      * @uses   \Lucille\Response\LucilleErrorResponse
      * @uses   \Lucille\Exceptions\LucilleException
-     *
-     * @expectedException         \Exception
-     * @expectedExceptionMessage  custom ex
-     * @expectedExceptionCode     3
      */
     public function testProcessRequestRouterThrowsCustomException() {
+        $this->expectException(\Exception::class);
+        $this->expectExceptionCode(3);
+        $this->expectExceptionMessage('custom ex');
+        
         $request = new GetRequest(new Uri('/de/page1'), new HeaderCollection(), new RequestParameterCollection());
         
         $chain = new GetRoutingChain();

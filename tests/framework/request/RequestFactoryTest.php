@@ -9,6 +9,7 @@
 
 namespace Lucille\UnitTests;
     
+use Lucille\Exceptions\UnsupportedRequestMethodException;
 use Lucille\Request\DeleteRequest;
 use Lucille\Request\GetRequest;
 use Lucille\Request\PatchRequest;
@@ -105,9 +106,10 @@ class RequestFactoryTest extends TestCase {
      * @uses   \Lucille\Header\HeaderCollection
      * @uses   \Lucille\Exceptions\LucilleException
      * @uses   \Lucille\Exceptions\UnsupportedRequestMethodException::__construct 
-     * @expectedException \Lucille\Exceptions\UnsupportedRequestMethodException
      */
     public function testCreateRequestThrowsExceptionOnUnsupportedRequestMethod() {
+        $this->expectException(UnsupportedRequestMethodException::class);
+        
         $request = $this->buildRequest('INVALID');
     }
     

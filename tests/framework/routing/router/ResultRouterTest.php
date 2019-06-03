@@ -9,6 +9,7 @@
     
 namespace Lucille\UnitTests;
 
+use Lucille\Exceptions\RoutingChainConfigurationException;
 use Lucille\Response\Response;
 use Lucille\Result\Result;
 use Lucille\Routing\ResultRouter;
@@ -42,10 +43,10 @@ class ResultRouterTest extends TestCase {
      *
      * @uses   \Lucille\Exceptions\LucilleException
      * @uses   \Lucille\Exceptions\RoutingChainConfigurationException
-     * 
-     * @expectedException \Lucille\Exceptions\RoutingChainConfigurationException
      */
     public function testGetNextThrowsRoutingChainConfigurationException() {
+        $this->expectException(RoutingChainConfigurationException::class);
+        
         $router = new ResultTestRouter();
         $router->getNext();
     }

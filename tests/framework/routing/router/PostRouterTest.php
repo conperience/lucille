@@ -10,6 +10,7 @@
 namespace Lucille\UnitTests;
 
 use Lucille\Command;
+use Lucille\Exceptions\RoutingChainConfigurationException;
 use Lucille\Request\PostRequest;
 use Lucille\Routing\PostRouter;
 use PHPUnit\Framework\TestCase;
@@ -42,10 +43,10 @@ class PostRouterTest extends TestCase {
      *
      * @uses   \Lucille\Exceptions\LucilleException
      * @uses   \Lucille\Exceptions\RoutingChainConfigurationException
-     * 
-     * @expectedException \Lucille\Exceptions\RoutingChainConfigurationException
      */
     public function testGetNextThrowsRoutingChainConfigurationException() {
+        $this->expectException(RoutingChainConfigurationException::class);
+        
         $router = new PostTestRouter();
         $router->getNext();
     }

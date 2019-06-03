@@ -2,6 +2,8 @@
 
 namespace Lucille\UnitTests;
 
+use Lucille\Exceptions\RequestParameterCollectionNotFoundException;
+use Lucille\Exceptions\RequestParameterNotFoundException;
 use Lucille\Request\Parameter\NumericRequestParameterName;
 use Lucille\Request\Parameter\RequestParameterCollection;
 use Lucille\Request\Parameter\StringRequestParameter;
@@ -76,10 +78,10 @@ class RequestParameterCollectionTest extends TestCase {
      * @uses   \Lucille\Request\Parameter\StringRequestParameterName::__construct
      * @uses   \Lucille\Exceptions\LucilleException::__construct
      * @uses   \Lucille\Exceptions\RequestParameterNotFoundException::__construct
-     *                                                                        
-     * @expectedException \Lucille\Exceptions\RequestParameterNotFoundException
      */
     public function testCollectionGetParamThrowsException() {
+        $this->expectException(RequestParameterNotFoundException::class);
+        
         $collection = $this->buildTestCollectionWithParams(false);
         $collection->getParam('foo');
     }
@@ -236,10 +238,10 @@ class RequestParameterCollectionTest extends TestCase {
      * @uses   \Lucille\Request\Parameter\NumericRequestParameterName::__construct
      * @uses   \Lucille\Exceptions\LucilleException::__construct
      * @uses   \Lucille\Exceptions\RequestParameterCollectionNotFoundException::__construct
-     *                                                                         
-     * @expectedException \Lucille\Exceptions\RequestParameterCollectionNotFoundException
      */
     public function testGetParameterCollectionThrowsException() {
+        $this->expectException(RequestParameterCollectionNotFoundException::class);
+        
         $collection = $this->buildTestCollectionWithParams(false);
         $collection->getParameterCollection('notexist');
     }

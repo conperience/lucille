@@ -19,9 +19,10 @@ class LucilleExceptionTest extends TestCase {
     
     /**
      * @covers ::__construct
-     * @expectedException \Lucille\Exceptions\LucilleException
      */
     public function testLucilleException() {
+        $this->expectException(LucilleException::class);
+        
         throw new LucilleException('generic exception');
     }
     

@@ -2,6 +2,7 @@
 
 namespace Lucille\UnitTests;
 
+use Lucille\Exceptions\RequestParameterNotFoundException;
 use Lucille\Header\HeaderCollection;
 use Lucille\Request\Parameter\RequestParameterCollection;
 use Lucille\Request\Parameter\StringRequestParameter;
@@ -72,10 +73,10 @@ class RequestTest extends TestCase {
      * @uses   \Lucille\Request\Parameter\StringRequestParameterName
      * @uses   \Lucille\Request\Uri::__construct
      * @uses   \Lucille\Header\HeaderCollection::fromSource
-     *                                         
-     * @expectedException Lucille\Exceptions\RequestParameterNotFoundException
      */
     public function testParamByNameNotFoundThrowsException() {
+        $this->expectException(RequestParameterNotFoundException::class);
+        
         $request = $this->buildTestRequest();
         $request->getParam('doesnotexist');
     }

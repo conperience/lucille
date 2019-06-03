@@ -20,10 +20,9 @@ class XmlTargetIdNotUniqueExceptionTest extends TestCase {
     /**
      * @covers ::__construct
      * @uses   \Lucille\Exceptions\LucilleException
-     *                                            
-     * @expectedException \Lucille\Components\Xml\Exceptions\XmlTargetIdNotUniqueException
      */
     public function testXmlTargetIdNotUniqueException() {
+        $this->expectException(XmlTargetIdNotUniqueException::class);
         throw new XmlTargetIdNotUniqueException('node2');
     }
     

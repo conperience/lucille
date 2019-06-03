@@ -10,6 +10,7 @@
 namespace Lucille\UnitTests;
         
 use Lucille\Directory;
+use Lucille\Exceptions\DirectoryNotFoundException;
 use Lucille\Filename;
 use PHPUnit\Framework\TestCase;
     
@@ -33,10 +34,10 @@ class DirectoryTest extends TestCase {
      * @covers ::__construct
      * @uses   \Lucille\Exceptions\DirectoryNotFoundException
      * @uses   \Lucille\Exceptions\LucilleException
-     *
-     * @expectedException \Lucille\Exceptions\DirectoryNotFoundException
      */
     public function testThrowsExceptionIfDirectoryDoesNotExist() {
+        $this->expectException(DirectoryNotFoundException::class);
+        
         $dir = new Directory('/tmp/notexist');
     }
     

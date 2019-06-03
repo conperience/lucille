@@ -13,10 +13,10 @@ class UriPartIndexOutOfBoundsExceptionTest extends TestCase {
     /**
      * @covers ::__construct
      * @uses   \Lucille\Exceptions\LucilleException::__construct
-     *                                                          
-     * @expectedException \Lucille\Exceptions\UriPartIndexOutOfBoundsException
      */
     public function testException() {
+        $this->expectException(UriPartIndexOutOfBoundsException::class);
+        
         throw new UriPartIndexOutOfBoundsException('message');
     }
     

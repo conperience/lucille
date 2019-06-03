@@ -2,6 +2,11 @@
 
 namespace Lucille\UnitTests;
 
+use Lucille\Components\Xml\Exceptions\LoadingXmlFileFailedException;
+use Lucille\Components\Xml\Exceptions\XmlMultipleNodesFoundException;
+use Lucille\Components\Xml\Exceptions\XmlNodeNotFoundException;
+use Lucille\Components\Xml\Exceptions\XmlTargetIdNotFoundException;
+use Lucille\Components\Xml\Exceptions\XmlTargetIdNotUniqueException;
 use Lucille\Components\Xml\GenericXmlContent;
 use Lucille\Components\Xml\XmlContentInterface;
 use Lucille\Components\Xml\XPathQuery;
@@ -68,10 +73,10 @@ class GenericXmlContentTest extends TestCase {
      * @uses   \Lucille\Filename
      * @uses   \Lucille\Components\Xml\Exceptions\LoadingXmlFileFailedException::__construct
      * @uses   \Lucille\Exceptions\LucilleException::__construct
-     *                          
-     * @expectedException \Lucille\Components\Xml\Exceptions\LoadingXmlFileFailedException
      */
     public function testLoadInvalidXmlFileThrowsException() {
+        $this->expectException(LoadingXmlFileFailedException::class);
+        
         set_error_handler(function ($errno, $errstr) {});
         $doc = new TestXmlContent(
             new Filename(__DIR__ . '/data/test.invalid.xml')
@@ -114,10 +119,10 @@ class GenericXmlContentTest extends TestCase {
      *                          
      * @uses   \Lucille\Components\Xml\Exceptions\XmlTargetIdNotFoundException::__construct
      * @uses   \Lucille\Exceptions\LucilleException::__construct
-     *                          
-     * @expectedException \Lucille\Components\Xml\Exceptions\XmlTargetIdNotFoundException
      */
     public function testFindNodeByIdNotFoundThrowsException() {
+        $this->expectException(XmlTargetIdNotFoundException::class);
+        
         $doc = $this->getTestXmlContent();
         $doc->findById('doesnotexist');
     }
@@ -130,10 +135,10 @@ class GenericXmlContentTest extends TestCase {
      *
      * @uses   \Lucille\Components\Xml\Exceptions\XmlTargetIdNotUniqueException::__construct
      * @uses   \Lucille\Exceptions\LucilleException::__construct
-     *
-     * @expectedException \Lucille\Components\Xml\Exceptions\XmlTargetIdNotUniqueException
      */
     public function testFindNodeByIdMultipleNodesFoundThrowsException() {
+        $this->expectException(XmlTargetIdNotUniqueException::class);
+        
         $doc = $this->getTestXmlContent();
         $doc->findById('20');
     }
@@ -176,10 +181,10 @@ class GenericXmlContentTest extends TestCase {
      *                                        
      * @uses   \Lucille\Components\Xml\Exceptions\XmlNodeNotFoundException::__construct
      * @uses   \Lucille\Exceptions\LucilleException::__construct
-     *                                        
-     * @expectedException \Lucille\Components\Xml\Exceptions\XmlNodeNotFoundException
      */
     public function testQueryOneXpathQueryNotFoundThrowsException() {
+        $this->expectException(XmlNodeNotFoundException::class);
+        
         $doc = $this->getTestXmlContent();
         $doc->queryOne(new XPathQuery("/does/not/exist"));
     }
@@ -193,10 +198,10 @@ class GenericXmlContentTest extends TestCase {
      *
      * @uses   \Lucille\Components\Xml\Exceptions\XmlMultipleNodesFoundException::__construct
      * @uses   \Lucille\Exceptions\LucilleException::__construct
-     *
-     * @expectedException \Lucille\Components\Xml\Exceptions\XmlMultipleNodesFoundException
      */
     public function testQueryOneXpathQueryMultipleNodesFoundThrowsException() {
+        $this->expectException(XmlMultipleNodesFoundException::class);
+        
         $doc = $this->getTestXmlContent();
         $doc->queryOne(new XPathQuery("//doc"));
     }

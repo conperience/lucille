@@ -20,10 +20,9 @@ class XmlMultipleNodesFoundExceptionTest extends TestCase {
     /**
      * @covers ::__construct
      * @uses   \Lucille\Exceptions\LucilleException
-     *                                            
-     * @expectedException \Lucille\Components\Xml\Exceptions\XmlMultipleNodesFoundException
      */
     public function testXmlMultipleNodesFoundException() {
+        $this->expectException(XmlMultipleNodesFoundException::class);
         throw new XmlMultipleNodesFoundException();
     }
     

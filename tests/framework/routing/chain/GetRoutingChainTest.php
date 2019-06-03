@@ -9,6 +9,7 @@
 
 namespace Lucille\UnitTests;
 
+use Lucille\Exceptions\RoutingChainConfigurationException;
 use Lucille\Header\HeaderCollection;
 use Lucille\Query;
 use Lucille\Request\GetRequest;
@@ -92,10 +93,10 @@ class GetRoutingChainTest extends TestCase {
      * @uses   \Lucille\Request\Uri
      * @uses   \Lucille\Exceptions\LucilleException
      * @uses   \Lucille\Exceptions\RoutingChainConfigurationException
-     * 
-     * @expectedException \Lucille\Exceptions\RoutingChainConfigurationException
      */
     public function testRoutingChainHasNoRoutersThrowsRoutingChainConfigurationException() {
+        $this->expectException(RoutingChainConfigurationException::class);
+        
         $chain = new GetRoutingChain();
         $chain->route(new GetRequest(new Uri('/'), new HeaderCollection(), new RequestParameterCollection()));
     }

@@ -20,10 +20,9 @@ class XmlTargetIdNotFoundExceptionTest extends TestCase {
     /**
      * @covers ::__construct
      * @uses   \Lucille\Exceptions\LucilleException
-     *                                            
-     * @expectedException \Lucille\Components\Xml\Exceptions\XmlTargetIdNotFoundException
      */
     public function testXmlTargetIdNotFoundException() {
+        $this->expectException(XmlTargetIdNotFoundException::class);
         throw new XmlTargetIdNotFoundException('node1');
     }
     

@@ -20,10 +20,9 @@ class XmlNodeNotFoundExceptionTest extends TestCase {
     /**
      * @covers ::__construct
      * @uses   \Lucille\Exceptions\LucilleException
-     *                                            
-     * @expectedException \Lucille\Components\Xml\Exceptions\XmlNodeNotFoundException
      */
     public function testXmlNodeNotFoundException() {
+        $this->expectException(XmlNodeNotFoundException::class);
         throw new XmlNodeNotFoundException();
     }
     

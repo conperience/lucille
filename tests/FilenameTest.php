@@ -9,6 +9,7 @@
 
 namespace Lucille\UnitTests;
         
+use Lucille\Exceptions\FileNotFoundException;
 use Lucille\Filename;
 use PHPUnit\Framework\TestCase;
 
@@ -32,10 +33,10 @@ class FilenameTest extends TestCase {
      * @covers ::__construct
      * @uses   \Lucille\Exceptions\FileNotFoundException
      * @uses   \Lucille\Exceptions\LucilleException
-     *
-     * @expectedException \Lucille\Exceptions\FileNotFoundException
      */
     public function testThrowsExceptionIfFileDoesNotExist() {
+        $this->expectException(FileNotFoundException::class);
+        
         $filename = new Filename('/tmp/notexist');
     }
     

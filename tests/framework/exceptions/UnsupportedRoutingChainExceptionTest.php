@@ -20,10 +20,10 @@ class UnsupportedRoutingChainExceptionTest extends TestCase {
     /**
      * @covers ::__construct
      * @uses   \Lucille\Exceptions\LucilleException
-     *                                            
-     * @expectedException \Lucille\Exceptions\UnsupportedRoutingChainException
      */
     public function testNoRouterConfigurationException() {
+        $this->expectException(UnsupportedRoutingChainException::class);
+        
         throw new UnsupportedRoutingChainException('No routing target found');
     }
     

@@ -20,10 +20,10 @@ class UnsupportedHttpRequestMethodExceptionTest extends TestCase {
     /**
      * @covers ::__construct
      * @uses   \Lucille\Exceptions\LucilleException
-     *                                            
-     * @expectedException \Lucille\Exceptions\UnsupportedRequestMethodException
      */
     public function testUnsupportedHttpRequestMethodException() {
+        $this->expectException(UnsupportedRequestMethodException::class);
+        
         throw new UnsupportedRequestMethodException('PATCH');
     }
     

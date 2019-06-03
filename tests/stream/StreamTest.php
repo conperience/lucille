@@ -9,6 +9,10 @@
 
 namespace Lucille\UnitTests;
 
+use Lucille\Components\Stream\Exceptions\CannotRegisterStreamException;
+use Lucille\Components\Stream\Exceptions\CannotUnregisterStreamException;
+use Lucille\Components\Stream\Exceptions\StreamAlreadyRegisteredException;
+use Lucille\Components\Stream\Exceptions\StreamNotRegisteredException;
 use Lucille\Components\Stream\StreamName;
 use Lucille\Directory;
 use Lucille\Components\Stream\Stream;
@@ -41,9 +45,9 @@ class StreamTest extends TestCase {
      * 
      * @uses   \Lucille\Components\Stream\Exceptions\CannotRegisterStreamException
      * @uses   \Lucille\Exceptions\LucilleException
-     * @expectedException \Lucille\Components\Stream\Exceptions\CannotRegisterStreamException
      */
     public function testRegisterInternalDefinedStreamThrowsException() {
+        $this->expectException(CannotRegisterStreamException::class);
         @Stream::registerStream(new StreamName('php'), new Directory(__DIR__.'/data'));
     }
     
@@ -55,10 +59,9 @@ class StreamTest extends TestCase {
      *                                      
      * @uses   \Lucille\Components\Stream\Exceptions\StreamAlreadyRegisteredException
      * @uses   \Lucille\Exceptions\LucilleException
-     *                                      
-     * @expectedException \Lucille\Components\Stream\Exceptions\StreamAlreadyRegisteredException
      */
     public function testRegisterAlreadyDefinedSchemeThrowsException() {
+        $this->expectException(StreamAlreadyRegisteredException::class);
         Stream::registerStream(new StreamName('templates'), new Directory(__DIR__.'/data'));
         Stream::registerStream(new StreamName('templates'), new Directory(__DIR__.'/data'));
     }
@@ -86,10 +89,10 @@ class StreamTest extends TestCase {
      *
      * @uses   \Lucille\Components\Stream\Exceptions\CannotUnregisterStreamException
      * @uses   \Lucille\Exceptions\LucilleException
-     *
-     * @expectedException \Lucille\Components\Stream\Exceptions\CannotUnregisterStreamException
      */
     public function testUnregisterAlreadyUnregisteredSchemeThrowsException() {
+        $this->expectException(CannotUnregisterStreamException::class);
+        
         Stream::unregisterStream(new StreamName('test'));
         Stream::registerStream(new StreamName('test'), new Directory(__DIR__.'/data'));
         stream_wrapper_unregister('test');
@@ -117,10 +120,9 @@ class StreamTest extends TestCase {
      *
      * @uses   \Lucille\Components\Stream\Exceptions\StreamNotRegisteredException
      * @uses   \Lucille\Exceptions\LucilleException
-     *
-     * @expectedException \Lucille\Components\Stream\Exceptions\StreamNotRegisteredException
      */
     public function testGetRegisteredPathForUndefinedSchemeThrowsException() {
+        $this->expectException(StreamNotRegisteredException::class);
         Stream::getRegisteredPath(new StreamName('notdefined'));
     }
     

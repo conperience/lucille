@@ -2,6 +2,7 @@
 
 namespace Lucille\UnitTests;
 
+use Lucille\Exceptions\HeaderNotFoundException;
 use Lucille\Header\Header;
 use Lucille\Header\HeaderCollection;
 use PHPUnit\Framework\TestCase;
@@ -58,9 +59,10 @@ class HeaderCollectionTest extends TestCase {
      * @uses   \Lucille\Header\Header
      * @uses   \Lucille\Exceptions\HeaderNotFoundException::__construct
      * @uses   \Lucille\Exceptions\LucilleException::__construct
-     * @expectedException \Lucille\Exceptions\HeaderNotFoundException
      */
     public function testGetNonExistingHeaderThrowsException() {
+        $this->expectException(HeaderNotFoundException::class);
+        
         $collection = new HeaderCollection();
         $collection->getHeader('test');
     }

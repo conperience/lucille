@@ -15,10 +15,9 @@ class LoadingXmlFailedException extends TestCase {
      * @covers ::__construct
      * @uses   \Lucille\Exceptions\LucilleException::__construct
      * @uses   \Lucille\Filename
-     *                                                          
-     * @expectedException \Lucille\Components\Xml\Exceptions\LoadingXmlFileFailedException
      */
     public function testException() {
+        $this->expectException(LoadingXmlFileFailedException::class);
         throw new LoadingXmlFileFailedException(new Filename(TEST_FILE));
     }
     

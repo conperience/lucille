@@ -2,6 +2,7 @@
 
 namespace Lucille\UnitTests;
 
+use Lucille\Exceptions\UriPartIndexOutOfBoundsException;
 use Lucille\Request\Uri;
 use Lucille\Request\UriRegEx;
 use PHPUnit\Framework\TestCase;
@@ -121,9 +122,10 @@ class UriTest extends TestCase {
      * @uses   \Lucille\Exceptions\LucilleException
      * @uses   \Lucille\Exceptions\UriPartIndexOutOfBoundsException::__construct
      * @uses   \Lucille\Request\UriPart
-     * @expectedException \Lucille\Exceptions\UriPartIndexOutOfBoundsException
      */
     public function testGetUriPartNegativeIndexThrowsException() {
+        $this->expectException(UriPartIndexOutOfBoundsException::class);
+        
         $uri = new Uri('/document/demo/123');
         $this->assertEquals('document', $uri->getPart(-2)->asString());
     }
@@ -134,9 +136,10 @@ class UriTest extends TestCase {
      * @uses   \Lucille\Request\Uri::asString
      * @uses   \Lucille\Exceptions\LucilleException
      * @uses   \Lucille\Exceptions\UriPartIndexOutOfBoundsException::__construct
-     * @expectedException \Lucille\Exceptions\UriPartIndexOutOfBoundsException
      */
     public function testGetUriPartOutOfBoundsIndexThrowsException() {
+        $this->expectException(UriPartIndexOutOfBoundsException::class);
+        
         $uri = new Uri('/document/demo/123');
         $uri->getPart(5);
     }

@@ -9,6 +9,8 @@
 
 namespace Lucille\UnitTests;
         
+use Lucille\Components\Xsl\Exceptions\ImportingXslStylesheetFailedException;
+use Lucille\Components\Xsl\Exceptions\LoadingXslStylesheetFailedException;
 use Lucille\Components\Xsl\XslProcessor;
 use Lucille\Filename;
 use PHPUnit\Framework\TestCase;
@@ -67,10 +69,10 @@ class XslProcessorTest extends TestCase {
      *                          
      * @uses   \Lucille\Exceptions\LucilleException
      * @uses   \Lucille\Components\xsl\Exceptions\LoadingXslStylesheetFailedException
-     *                                                        
-     * @expectedException \Lucille\Components\Xsl\Exceptions\LoadingXslStylesheetFailedException
      */
     public function testLoadInvalidStyleSheetThrowsException() {
+        $this->expectException(LoadingXslStylesheetFailedException::class);
+        
         $xsl = @new XslProcessor(new Filename(__DIR__.'/data/test.broken.xsl'));
     }
     
@@ -81,10 +83,10 @@ class XslProcessorTest extends TestCase {
      *
      * @uses   \Lucille\Exceptions\LucilleException
      * @uses   \Lucille\Components\Xsl\Exceptions\ImportingXslStylesheetFailedException
-     *
-     * @expectedException \Lucille\Components\Xsl\Exceptions\ImportingXslStylesheetFailedException
      */
     public function testImportingInvalidStyleSheetButValidXmlDocumentThrowsException() {
+        $this->expectException(ImportingXslStylesheetFailedException::class);
+        
         $xsl = @new XslProcessor(new Filename(__DIR__.'/data/test.invalid.xsl'));
     }
     

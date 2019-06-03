@@ -10,6 +10,7 @@
 namespace Lucille\UnitTests;
 
 use Lucille\Command;
+use Lucille\Exceptions\RoutingChainConfigurationException;
 use Lucille\Request\PatchRequest;
 use Lucille\Routing\PatchRouter;
 use PHPUnit\Framework\TestCase;
@@ -42,10 +43,10 @@ class PatchRouterTest extends TestCase {
      *
      * @uses   \Lucille\Exceptions\LucilleException
      * @uses   \Lucille\Exceptions\RoutingChainConfigurationException
-     * 
-     * @expectedException \Lucille\Exceptions\RoutingChainConfigurationException
      */
     public function testGetNextThrowsRoutingChainConfigurationException() {
+        $this->expectException(RoutingChainConfigurationException::class);
+        
         $router = new PatchTestRouter();
         $router->getNext();
     }

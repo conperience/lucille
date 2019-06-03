@@ -20,7 +20,7 @@ class NumericRequestParameterNameTest extends TestCase {
      */
     public function testReturnsNameAsInt() {
         $param = new StringRequestParameter(new NumericRequestParameterName(1001), '1000');
-        $this->assertInternalType('int', $param->getName()->asInt());
+        $this->assertIsInt($param->getName()->asInt());
     }
     
 }

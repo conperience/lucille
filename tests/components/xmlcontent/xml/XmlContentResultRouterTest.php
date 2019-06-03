@@ -14,6 +14,7 @@ use Lucille\Components\Xml\XmlContentResultRouter;
 use Lucille\Components\Xml\XmlContent;
 
 use Lucille\Components\Xml\XmlResponse;
+use Lucille\Exceptions\RoutingChainConfigurationException;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -50,10 +51,10 @@ class XmlContentResultRouterTest extends TestCase {
      *
      * @uses   \Lucille\Exceptions\LucilleException::__construct
      * @uses   \Lucille\Exceptions\RoutingChainConfigurationException::__construct
-    
-     * @expectedException \Lucille\Exceptions\RoutingChainConfigurationException
      */
     public function testUnsupportedResultTypeInvokesNextRouter() {
+        $this->expectException(RoutingChainConfigurationException::class);
+        
         $router = new XmlContentResultRouter();
         $router->route(new XhtmlContent());
     }

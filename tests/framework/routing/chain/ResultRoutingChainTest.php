@@ -9,6 +9,7 @@
 
 namespace Lucille\UnitTests;
 
+use Lucille\Exceptions\RoutingChainConfigurationException;
 use Lucille\Response\Response;
 use Lucille\Result\Result;
 use Lucille\Routing\ResultRouter;
@@ -77,10 +78,10 @@ class ResultRoutingChainTest extends TestCase {
      * @uses   \Lucille\Routing\ResultRouter::getNext
      * @uses   \Lucille\Exceptions\LucilleException
      * @uses   \Lucille\Exceptions\RoutingChainConfigurationException
-     * 
-     * @expectedException \Lucille\Exceptions\RoutingChainConfigurationException
      */
     public function testAddRouter_ChainHasNoRouters() {
+        $this->expectException(RoutingChainConfigurationException::class);
+        
         $chain = new ResultRoutingChain();
         $res = $chain->route(new TestResult());
         $this->assertInstanceOf(Response::class, $res);
