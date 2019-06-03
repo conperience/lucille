@@ -7,17 +7,16 @@ language: php
 
 php:
   - 7.2
-  - 7.3
-  - master
 
 matrix:
   allow_failures:
     - php: master
       
 before_install:
+  - sudo apt-get -qq update && sudo apt-get install ant
+  - echo $(ant -version)
   - if [ ! -d $HOME/.phive ]; then mkdir $HOME/.phive ; fi
-  - if [ ! -f $HOME/.phive/phive.phar ]; then ant travis-install-phive ; mv phive.phar $HOME/.phive
-    ; fi
+  - if [ ! -f $HOME/.phive/phive.phar ]; then ant travis-install-phive ; mv phive.phar $HOME/.phive ; fi
   - sudo cp $HOME/.phive/phive.phar /usr/local/bin/phive
 
 install:
