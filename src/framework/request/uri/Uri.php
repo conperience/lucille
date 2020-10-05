@@ -55,7 +55,7 @@ class Uri {
     
     /**
      * @param int $index URI path index value
-     * @return string
+     * @return UriPart
      * @throws UriPartIndexOutOfBoundsException
      */
     public function getPart(int $index): UriPart {
