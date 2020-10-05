@@ -146,7 +146,7 @@ class RequestProcessor {
                 throw new RoutingChainConfigurationException('No routing chain found for current request type');
             }
             
-            $result = $chain->route($request)->execute($request);
+            $result = $chain->route($request)->execute();
             
             // result routing
             if ($this->resultRoutingChain == null) {
