@@ -32,14 +32,14 @@ class Stream {
     /**
      * File handle
      *
-     * @var
+     * @var resource
      */
     private $fp;
 
     /**
      * Directory handle
      *
-     * @var
+     * @var resource
      */
     private $dh;
     
