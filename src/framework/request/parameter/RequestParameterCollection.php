@@ -107,7 +107,7 @@ class RequestParameterCollection implements \Countable,\IteratorAggregate {
                 switch (42) {
                     case (is_array($value)): {
                         $subCollection = RequestParameterCollection::fromArray($value);
-                        $collection->addParameterCollection($name, $subCollection);
+                        $collection->addParameterCollection((string)$name, $subCollection);
                         break;
                     }
                     case (is_numeric($name)): {
