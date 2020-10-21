@@ -3,7 +3,7 @@
 Lucille is a lightweight HTTP abstraction layer based on the principles of CQRS.
 It is designed to quickly create restful services and web services/websites that require dynamic request handling.
 
-[![Build Status](https://travis-ci.org/conperience/lucille.svg?branch=master)](https://travis-ci.org/conperience/lucille)
+[![Integrate](https://github.com/conperience/lucille/workflows/Integrate/badge.svg?branch=master)](https://github.com/conperience/lucille/actions)
 
 ## Requirements
 * PHP 7.2+
