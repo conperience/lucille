@@ -5,6 +5,7 @@
 /.idea
 /bin
 /build
+/tools
 /vendor
 /phpunit.xml
 /phpdox.xml
