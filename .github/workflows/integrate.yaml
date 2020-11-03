@@ -37,7 +37,6 @@ jobs:
           coverage: "xdebug"
           extensions: "${{ env.PHP_EXTENSIONS }}"
           php-version: "${{ matrix.php-version }}"
-          tools: "phive"
 
       - name: "Set up problem matchers for phpunit/phpunit"
         run: "echo \"::add-matcher::${{ runner.tool_cache }}/phpunit.json\""
@@ -57,8 +56,5 @@ jobs:
         with:
           dependencies: "${{ matrix.dependencies }}"
 
-      - name: "Install dependencies with phive"
-        run: "phive install --trust-gpg-keys 4AA394086372C20A"
-
       - name: "Run tests with phpunit/phpunit"
-        run: "tools/phpunit --configuration=phpunit.xml.dist"
+        run: "vendor/bin/phpunit --configuration=phpunit.xml.dist"
