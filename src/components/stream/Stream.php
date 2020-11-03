@@ -19,6 +19,8 @@ use Lucille\Components\Stream\Exceptions\StreamNotRegisteredException;
  * Class Stream
  *
  * @package Lucille\Components\Stream
+ *
+ * phpcs:disable PSR1.Methods.CamelCapsMethodName
  */
 class Stream {
     
