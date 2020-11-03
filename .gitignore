@@ -9,5 +9,6 @@
 /vendor
 /phpunit.xml
 /phpdox.xml
+.phpunit.result.cache
 cache.properties
 composer.lock
