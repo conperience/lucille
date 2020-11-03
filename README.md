@@ -7,7 +7,6 @@ It is designed to quickly create restful services and web services/websites that
 
 ## Requirements
 * PHP 7.2+
-  * (even if Lucille should work with 7.0+ it is recommended to use at least 7.2)
   * ext/dom *(when using the XML/XHTML component)*
   * ext/xsl *(when using the XSL component)*
 
