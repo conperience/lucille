@@ -10,3 +10,4 @@
 /phpunit.xml
 /phpdox.xml
 cache.properties
+composer.lock
