@@ -24,6 +24,10 @@ use Lucille\Routing\PostRoutingChain;
 use Lucille\Routing\PutRoutingChain;
 use Lucille\Routing\ResultRoutingChain;
 use Lucille\Routing\RoutingChain;
+use Lucille\Request\PostRequest;
+use Lucille\Request\PutRequest;
+use Lucille\Request\PatchRequest;
+use Lucille\Request\DeleteRequest;
 
 /**
  * Class RequestProcessor
@@ -82,27 +86,27 @@ class RequestProcessor {
      */
     public function addRoutingChain(RoutingChain $routingChain): void {
         switch (get_class($routingChain)) {
-            case 'Lucille\Routing\GetRoutingChain': {
+            case GetRoutingChain::class: {
                 $this->getRoutingChain = $routingChain;
                 break;
             }
-            case 'Lucille\Routing\PostRoutingChain': {
+            case PostRoutingChain::class: {
                 $this->postRoutingChain = $routingChain;
                 break;
             }
-            case 'Lucille\Routing\PutRoutingChain': {
+            case PutRoutingChain::class: {
                 $this->putRoutingChain = $routingChain;
                 break;
             }
-            case 'Lucille\Routing\PatchRoutingChain': {
+            case PatchRoutingChain::class: {
                 $this->patchRoutingChain = $routingChain;
                 break;
             }
-            case 'Lucille\Routing\DeleteRoutingChain': {
+            case DeleteRoutingChain::class: {
                 $this->deleteRoutingChain = $routingChain;
                 break;
             }
-            case 'Lucille\Routing\ResultRoutingChain': {
+            case ResultRoutingChain::class: {
                 $this->resultRoutingChain = $routingChain;
                 break;
             }
@@ -124,19 +128,19 @@ class RequestProcessor {
                     $chain = $this->getRoutingChain;
                     break;
                 }
-                case 'Lucille\Request\PostRequest': {
+                case PostRequest::class: {
                     $chain = $this->postRoutingChain;
                     break;
                 }
-                case 'Lucille\Request\PutRequest': {
+                case PutRequest::class: {
                     $chain = $this->putRoutingChain;
                     break;
                 }
-                case 'Lucille\Request\PatchRequest': {
+                case PatchRequest::class: {
                     $chain = $this->patchRoutingChain;
                     break;
                 }
-                case 'Lucille\Request\DeleteRequest': {
+                case DeleteRequest::class: {
                     $chain = $this->deleteRoutingChain;
                     break;
                 }
