@@ -10,7 +10,6 @@ use Lucille\Request\Request;
 use Lucille\Request\Uri;
 use PHPUnit\Framework\TestCase;
 
-
 class TestRequest extends Request {
     public function __construct(Uri $uri, HeaderCollection $headerCollection, RequestParameterCollection $parameterCollection) {
         parent::__construct($uri, $headerCollection, $parameterCollection);
@@ -63,7 +62,7 @@ class RequestTest extends TestCase {
     /**
      * @covers ::getParam
      * @covers ::__construct
-     *                                             
+     *
      * @uses   \Lucille\Request\Uri::__construct
      *
      * @uses   \Lucille\Exceptions\LucilleException::__construct
@@ -153,7 +152,7 @@ class RequestTest extends TestCase {
         );
         
         $request = $this->buildTestRequest(array(), $parameterSource);
-        $this->assertInstanceOf(RequestParameterCollection::class, $request->getParameterCollection('list1'  ));
+        $this->assertInstanceOf(RequestParameterCollection::class, $request->getParameterCollection('list1'));
     }
     
     
@@ -177,4 +176,3 @@ class RequestTest extends TestCase {
     }
     
 }
-    

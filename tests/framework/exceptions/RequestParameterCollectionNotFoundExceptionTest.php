@@ -24,4 +24,3 @@ class RequestParameterCollectionNotFoundExceptionTest extends TestCase {
     }
     
 }
-    

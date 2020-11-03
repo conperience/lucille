@@ -184,7 +184,7 @@ class Stream {
      * @param int $whence whence
      * @return int
      */
-    public function stream_seek($offset, $whence ) {
+    public function stream_seek($offset, $whence) {
         return fseek($this->fp, $offset, $whence);
     }
     

@@ -9,4 +9,4 @@
 
 require_once dirname(__FILE__).'/../autoload.php';
 
-define('TEST_FILE',        __DIR__.'/data/testfile');
+define('TEST_FILE', __DIR__.'/data/testfile');

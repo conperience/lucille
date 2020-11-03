@@ -20,7 +20,6 @@ use Lucille\Routing\GetRouter;
 use Lucille\Routing\GetRoutingChain;
 
 use PHPUnit\Framework\TestCase;
-    
 
 class GetRoutingChainTestQuery implements Query {
     public function execute(): Result {

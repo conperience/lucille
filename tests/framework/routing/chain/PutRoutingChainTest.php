@@ -21,7 +21,6 @@ use Lucille\Routing\PutRouter;
 
 use Lucille\Routing\PutRoutingChain;
 use PHPUnit\Framework\TestCase;
-    
 
 class PutRoutingChainTestCommand implements Command {
     public function execute(): Result {

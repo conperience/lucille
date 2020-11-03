@@ -21,7 +21,6 @@ use Lucille\Routing\PostRouter;
 use Lucille\Routing\PostRoutingChain;
 
 use PHPUnit\Framework\TestCase;
-    
 
 class PostRoutingChainTestCommand implements Command {
     public function execute(): Result {

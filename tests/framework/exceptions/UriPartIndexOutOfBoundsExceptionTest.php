@@ -21,4 +21,3 @@ class UriPartIndexOutOfBoundsExceptionTest extends TestCase {
     }
     
 }
-    

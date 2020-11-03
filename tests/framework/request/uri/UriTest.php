@@ -145,4 +145,3 @@ class UriTest extends TestCase {
     }
     
 }
-    

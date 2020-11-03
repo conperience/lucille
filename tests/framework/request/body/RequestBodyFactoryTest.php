@@ -32,4 +32,3 @@ class RequestBodyFactoryTest extends TestCase {
     }
     
 }
-    

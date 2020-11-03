@@ -21,7 +21,6 @@ use Lucille\Routing\PatchRouter;
 
 use Lucille\Routing\PatchRoutingChain;
 use PHPUnit\Framework\TestCase;
-    
 
 class PatchRoutingChainTestCommand implements Command {
     public function execute(): Result {

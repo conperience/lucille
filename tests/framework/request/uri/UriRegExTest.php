@@ -20,4 +20,3 @@ class UriRegExTest extends TestCase {
     }
     
 }
-    

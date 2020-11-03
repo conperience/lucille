@@ -134,7 +134,7 @@ class RequestProcessorTest extends TestCase {
     
     /**
      * @covers ::run
-     * 
+     *
      * @uses   \Lucille\RequestProcessor::addRoutingChain
      * @uses   \Lucille\Routing\ResultRoutingChain
      * @uses   \Lucille\Routing\GetRoutingChain

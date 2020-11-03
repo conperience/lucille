@@ -21,7 +21,6 @@ use Lucille\Routing\DeleteRouter;
 use Lucille\Routing\DeleteRoutingChain;
 
 use PHPUnit\Framework\TestCase;
-    
 
 class DeleteRoutingChainTestCommand implements Command {
     public function execute(): Result {

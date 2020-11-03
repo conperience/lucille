@@ -26,4 +26,3 @@ class StreamAlreadyRegisteredExceptionTest extends TestCase {
     }
     
 }
-    

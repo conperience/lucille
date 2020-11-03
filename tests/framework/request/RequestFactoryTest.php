@@ -105,7 +105,7 @@ class RequestFactoryTest extends TestCase {
      * @uses   \Lucille\Request\Uri
      * @uses   \Lucille\Header\HeaderCollection
      * @uses   \Lucille\Exceptions\LucilleException
-     * @uses   \Lucille\Exceptions\UnsupportedRequestMethodException::__construct 
+     * @uses   \Lucille\Exceptions\UnsupportedRequestMethodException::__construct
      */
     public function testCreateRequestThrowsExceptionOnUnsupportedRequestMethod() {
         $this->expectException(UnsupportedRequestMethodException::class);

@@ -85,11 +85,10 @@ class HeaderCollectionTest extends TestCase {
         $header2 = $collection->getHeader('HTTP_X_HEADER2');
         
         $this->assertEquals('HTTP_X_HEADER1', $header1->getName());
-        $this->assertEquals('foo',            $header1->getValue());
+        $this->assertEquals('foo', $header1->getValue());
         
         $this->assertEquals('HTTP_X_HEADER2', $header2->getName());
-        $this->assertEquals('bar',            $header2->getValue());
+        $this->assertEquals('bar', $header2->getValue());
     }
 
 }
-    
