@@ -39,7 +39,7 @@ class ResultRoutingChainTest extends TestCase {
      * @uses   \Lucille\Routing\ResultRouter::setNext
      * @uses   \Lucille\Routing\ResultRouter::getNext
      */
-    public function testAddRouter_MultipleRouterReturnsResponse() {
+    public function testAddRouteMultipleRouterReturnsResponse() {
         $chain = new ResultRoutingChain();
         $chain->addRouter(new ResultRoutingChainTestRouter());
         $chain->addRouter(new ResultRoutingChainTestReturnsResponseRouter());
@@ -56,7 +56,7 @@ class ResultRoutingChainTest extends TestCase {
      * @uses   \Lucille\Exceptions\LucilleException
      * @uses   \Lucille\Exceptions\RoutingChainConfigurationException
      */
-    public function testAddRouter_ChainHasNoRouters() {
+    public function testAddRouterChainHasNoRouters() {
         $this->expectException(RoutingChainConfigurationException::class);
         
         $chain = new ResultRoutingChain();
