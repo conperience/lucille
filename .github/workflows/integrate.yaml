@@ -57,7 +57,7 @@ jobs:
           dependencies: "${{ matrix.dependencies }}"
 
       - name: "Install dependencies with phive"
-        run: "phive --no-progress install phpunit@8.5.8 --trust-gpg-keys 4AA394086372C20A"
+        run: "phive install --trust-gpg-keys 4AA394086372C20A"
 
       - name: "Run tests with phpunit/phpunit"
         run: "tools/phpunit --configuration=phpunit.xml.dist"
