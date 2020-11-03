@@ -15,29 +15,10 @@ use Lucille\Query;
 use Lucille\Request\GetRequest;
 use Lucille\Request\Parameter\RequestParameterCollection;
 use Lucille\Request\Uri;
-use Lucille\Result\Result;
 use Lucille\Routing\GetRouter;
 use Lucille\Routing\GetRoutingChain;
 
 use PHPUnit\Framework\TestCase;
-
-class GetRoutingChainTestQuery implements Query {
-    public function execute(): Result {
-    }
-}
-
-class GetRoutingChainTestRouter extends GetRouter {
-    public function route(GetRequest $request): Query {
-        return $this->getNext()->route($request);
-    }
-}
-
-class GetRoutingChainTestReturnsQueryRouter extends GetRouter {
-    public function route(GetRequest $request): Query {
-        return new GetRoutingChainTestQuery();
-    }
-}
-
 
 /**
  * @coversDefaultClass \Lucille\Routing\GetRoutingChain

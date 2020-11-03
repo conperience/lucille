@@ -10,17 +10,9 @@
 namespace Lucille\UnitTests;
 
 use Lucille\Exceptions\RoutingChainConfigurationException;
-use Lucille\Query;
-use Lucille\Request\GetRequest;
 use Lucille\Routing\GetRouter;
 use PHPUnit\Framework\TestCase;
     
-class GetTestRouter extends GetRouter {
-    public function route(GetRequest $request): Query {
-        return $this->getNext()->route($request);
-    }
-}
-
 /**
  * @coversDefaultClass \Lucille\Routing\GetRouter
  */

@@ -9,17 +9,9 @@
     
 namespace Lucille\UnitTests;
 
-use Lucille\Command;
 use Lucille\Exceptions\RoutingChainConfigurationException;
-use Lucille\Request\PatchRequest;
 use Lucille\Routing\PatchRouter;
 use PHPUnit\Framework\TestCase;
-    
-class PatchTestRouter extends PatchRouter {
-    public function route(PatchRequest $request): Command {
-        return $this->getNext()->route($request);
-    }
-}
 
 /**
  * @coversDefaultClass \Lucille\Routing\PatchRouter

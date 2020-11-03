@@ -9,17 +9,9 @@
     
 namespace Lucille\UnitTests;
 
-use Lucille\Command;
 use Lucille\Exceptions\RoutingChainConfigurationException;
-use Lucille\Request\PostRequest;
 use Lucille\Routing\PostRouter;
 use PHPUnit\Framework\TestCase;
-    
-class PostTestRouter extends PostRouter {
-    public function route(PostRequest $request): Command {
-        return $this->getNext()->route($request);
-    }
-}
 
 /**
  * @coversDefaultClass \Lucille\Routing\PostRouter

@@ -9,8 +9,6 @@
 
 namespace Lucille\UnitTests;
     
-require_once __DIR__ . '/data.php';
-
 use Lucille\Components\Xml\XhtmlResponse;
 use Lucille\Exceptions\UnsupportedRoutingChainException;
 use Lucille\Header\HeaderCollection;

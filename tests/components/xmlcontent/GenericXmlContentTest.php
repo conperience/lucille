@@ -8,20 +8,10 @@ use Lucille\Components\Xml\Exceptions\XmlNodeNotFoundException;
 use Lucille\Components\Xml\Exceptions\XmlTargetIdNotFoundException;
 use Lucille\Components\Xml\Exceptions\XmlTargetIdNotUniqueException;
 use Lucille\Components\Xml\GenericXmlContent;
-use Lucille\Components\Xml\XmlContentInterface;
 use Lucille\Components\Xml\XPathQuery;
 use Lucille\Filename;
 
 use PHPUnit\Framework\TestCase;
-
-class TestXmlContent extends GenericXmlContent implements XmlContentInterface {
-    public function append(string $id, GenericXmlContent $content): void {
-    }
-    public function insertBefore(string $id, GenericXmlContent $content): void {
-    }
-    public function replace(string $id, GenericXmlContent $content): void {
-    }
-}
 
 /**
  * @coversDefaultClass \Lucille\Components\Xml\GenericXmlContent

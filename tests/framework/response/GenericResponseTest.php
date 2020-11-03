@@ -14,11 +14,6 @@ use Lucille\Header\HeaderCollection;
 use Lucille\Response\GenericResponse;
 use PHPUnit\Framework\TestCase;
 
-class TestResponse extends GenericResponse {
-    public function send(): void {
-    }
-}
-
 /**
  * @coversDefaultClass \Lucille\Response\GenericResponse
  */

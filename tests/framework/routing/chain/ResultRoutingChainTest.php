@@ -11,33 +11,10 @@ namespace Lucille\UnitTests;
 
 use Lucille\Exceptions\RoutingChainConfigurationException;
 use Lucille\Response\Response;
-use Lucille\Result\Result;
 use Lucille\Routing\ResultRouter;
 use Lucille\Routing\ResultRoutingChain;
 
 use PHPUnit\Framework\TestCase;
-
-class TestResult implements Result {
-}
-
-class ResultRoutingChainTestResponse implements Response {
-    public function send(): void {
-        die('dump');
-    }
-}
-
-class ResultRoutingChainTestRouter extends ResultRouter {
-    public function route(Result $result): Response {
-        return $this->getNext()->route($result);
-    }
-}
-
-class ResultRoutingChainTestReturnsResponseRouter extends ResultRouter {
-    public function route(Result $result): Response {
-        return new ResultRoutingChainTestResponse();
-    }
-}
-
 
 /**
  * @coversDefaultClass \Lucille\Routing\ResultRoutingChain
