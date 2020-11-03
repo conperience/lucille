@@ -5,6 +5,8 @@ It is designed to quickly create restful services and web services/websites that
 
 [![Integrate](https://github.com/conperience/lucille/workflows/Integrate/badge.svg?branch=master)](https://github.com/conperience/lucille/actions)
 
+[![Type Coverage](https://shepherd.dev/github/conperience/lucille/coverage.svg)](https://shepherd.dev/github/conperience/lucille)
+
 ## Requirements
 * PHP 7.2+
   * ext/dom *(when using the XML/XHTML component)*
