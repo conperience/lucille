@@ -1,2 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<files psalm-version="4.1.1@16bfbd9224698bd738c665f33039fade2a1a3977"/>
+<files psalm-version="4.1.1@16bfbd9224698bd738c665f33039fade2a1a3977">
+  <file src="src/components/stream/Stream.php">
+    <InvalidArgument occurrences="1">
+      <code>$options</code>
+    </InvalidArgument>
+    <InvalidPropertyAssignmentValue occurrences="3">
+      <code>$this-&gt;fp</code>
+      <code>0</code>
+      <code>0</code>
+    </InvalidPropertyAssignmentValue>
+  </file>
+</files>
