@@ -59,4 +59,3 @@ class XhtmlContentResultRouterTest extends TestCase {
     }
     
 }
-

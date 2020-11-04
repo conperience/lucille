@@ -9,8 +9,6 @@
 
 namespace Lucille\UnitTests;
     
-require_once __DIR__ . '/data.php';
-
 use Lucille\Components\Xml\XhtmlResponse;
 use Lucille\Exceptions\UnsupportedRoutingChainException;
 use Lucille\Header\HeaderCollection;
@@ -134,7 +132,7 @@ class RequestProcessorTest extends TestCase {
     
     /**
      * @covers ::run
-     * 
+     *
      * @uses   \Lucille\RequestProcessor::addRoutingChain
      * @uses   \Lucille\Routing\ResultRoutingChain
      * @uses   \Lucille\Routing\GetRoutingChain

@@ -60,4 +60,3 @@ class XmlContentResultRouterTest extends TestCase {
     }
     
 }
-

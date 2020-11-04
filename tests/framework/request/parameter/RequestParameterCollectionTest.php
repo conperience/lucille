@@ -248,7 +248,7 @@ class RequestParameterCollectionTest extends TestCase {
     
     
     
-    private function buildTestCollectionWithParams(bool $withParams =true): RequestParameterCollection {
+    private function buildTestCollectionWithParams(bool $withParams = true): RequestParameterCollection {
         $collection = new RequestParameterCollection();
         
         if ($withParams) {
@@ -264,4 +264,3 @@ class RequestParameterCollectionTest extends TestCase {
     }
     
 }
-    

@@ -27,4 +27,3 @@ class LoadingXslStylesheetFailedExceptionTest extends TestCase {
     }
     
 }
-    

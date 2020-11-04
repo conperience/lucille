@@ -66,7 +66,7 @@ class XslProcessorTest extends TestCase {
      * @covers ::loadStylesheet
      * @uses   \Lucille\Filename
      * @uses   \Lucille\Components\Xsl\XslProcessor::__construct
-     *                          
+     *
      * @uses   \Lucille\Exceptions\LucilleException
      * @uses   \Lucille\Components\xsl\Exceptions\LoadingXslStylesheetFailedException
      */
@@ -96,4 +96,3 @@ class XslProcessorTest extends TestCase {
         return $dom;
     }
 }
-

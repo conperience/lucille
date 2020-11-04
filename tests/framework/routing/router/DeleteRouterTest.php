@@ -9,18 +9,10 @@
     
 namespace Lucille\UnitTests;
 
-use Lucille\Command;
 use Lucille\Exceptions\RoutingChainConfigurationException;
-use Lucille\Request\DeleteRequest;
 use Lucille\Routing\DeleteRouter;
 use PHPUnit\Framework\TestCase;
     
-class DeleteTestRouter extends DeleteRouter {
-    public function route(DeleteRequest $request): Command {
-        return $this->getNext()->route($request);
-    }
-}
-
 /**
  * @coversDefaultClass \Lucille\Routing\DeleteRouter
  */
@@ -52,4 +44,3 @@ class DeleteRouterTest extends TestCase {
     }
         
 }
-    

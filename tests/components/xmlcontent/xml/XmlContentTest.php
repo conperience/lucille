@@ -5,7 +5,6 @@ namespace Lucille\UnitTests;
 use Lucille\Components\Xml\XmlContent;
 use PHPUnit\Framework\TestCase;
 
-
 /**
  * @coversDefaultClass \Lucille\Components\Xml\XmlContent
  */
@@ -66,4 +65,3 @@ class XmlContentTest extends TestCase {
     }
     
 }
-    

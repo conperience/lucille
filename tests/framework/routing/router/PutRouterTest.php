@@ -9,17 +9,9 @@
     
 namespace Lucille\UnitTests;
 
-use Lucille\Command;
 use Lucille\Exceptions\RoutingChainConfigurationException;
-use Lucille\Request\PutRequest;
 use Lucille\Routing\PutRouter;
 use PHPUnit\Framework\TestCase;
-    
-class PutTestRouter extends PutRouter {
-    public function route(PutRequest $request): Command {
-        return $this->getNext()->route($request);
-    }
-}
 
 /**
  * @coversDefaultClass \Lucille\Routing\PutRouter
@@ -52,4 +44,3 @@ class PutRouterTest extends TestCase {
     }
         
 }
-    

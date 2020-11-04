@@ -12,9 +12,6 @@ namespace Lucille\UnitTests;
 use Lucille\Response\LucilleErrorResponse;
 use PHPUnit\Framework\TestCase;
 
-class TestEx extends \Exception {
-}
-
 /**
  * @coversDefaultClass \Lucille\Response\LucilleErrorResponse
  */

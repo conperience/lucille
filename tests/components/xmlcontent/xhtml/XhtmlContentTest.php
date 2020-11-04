@@ -6,7 +6,6 @@ use Lucille\Components\Xml\XhtmlContent;
 use Lucille\Filename;
 use PHPUnit\Framework\TestCase;
 
-
 /**
  * @coversDefaultClass \Lucille\Components\Xml\XhtmlContent
  */
@@ -72,7 +71,7 @@ class XhtmlContentTest extends TestCase {
      * @covers ::replace
      * @uses   \Lucille\Components\Xml\XhtmlContent::load
      * @uses   \Lucille\Components\Xml\GenericXmlContent
-     * @uses   \Lucille\Filename 
+     * @uses   \Lucille\Filename
      */
     public function testReplaceWithXhtmlWrapperTag() {
         $xhtml1 = new XhtmlContent(new Filename(__DIR__.'/data/test.xhtml'));

@@ -8,18 +8,10 @@ use Lucille\Components\Xml\Exceptions\XmlNodeNotFoundException;
 use Lucille\Components\Xml\Exceptions\XmlTargetIdNotFoundException;
 use Lucille\Components\Xml\Exceptions\XmlTargetIdNotUniqueException;
 use Lucille\Components\Xml\GenericXmlContent;
-use Lucille\Components\Xml\XmlContentInterface;
 use Lucille\Components\Xml\XPathQuery;
 use Lucille\Filename;
 
 use PHPUnit\Framework\TestCase;
-
-
-class TestXmlContent extends GenericXmlContent implements XmlContentInterface {
-    public function append(string $id, GenericXmlContent $content): void {}
-    public function insertBefore(string $id, GenericXmlContent $content): void {}
-    public function replace(string $id, GenericXmlContent $content): void {}
-}
 
 /**
  * @coversDefaultClass \Lucille\Components\Xml\GenericXmlContent
@@ -77,7 +69,8 @@ class GenericXmlContentTest extends TestCase {
     public function testLoadInvalidXmlFileThrowsException() {
         $this->expectException(LoadingXmlFileFailedException::class);
         
-        set_error_handler(function ($errno, $errstr) {});
+        set_error_handler(function ($errno, $errstr) {
+        });
         $doc = new TestXmlContent(
             new Filename(__DIR__ . '/data/test.invalid.xml')
         );
@@ -116,7 +109,7 @@ class GenericXmlContentTest extends TestCase {
      * @uses   \Lucille\Components\Xml\GenericXmlContent::__construct
      * @uses   \Lucille\Components\Xml\GenericXmlContent::loadDocument
      * @uses   \Lucille\Components\Xml\GenericXmlContent::getContentDom
-     *                          
+     *
      * @uses   \Lucille\Components\Xml\Exceptions\XmlTargetIdNotFoundException::__construct
      * @uses   \Lucille\Exceptions\LucilleException::__construct
      */
@@ -178,7 +171,7 @@ class GenericXmlContentTest extends TestCase {
      * @uses   \Lucille\Components\Xml\GenericXmlContent::loadDocument
      * @uses   \Lucille\Components\Xml\GenericXmlContent::getContentDom
      * @uses   \Lucille\Components\Xml\XPathQuery
-     *                                        
+     *
      * @uses   \Lucille\Components\Xml\Exceptions\XmlNodeNotFoundException::__construct
      * @uses   \Lucille\Exceptions\LucilleException::__construct
      */
@@ -273,32 +266,3 @@ class GenericXmlContentTest extends TestCase {
     }
     
 }
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

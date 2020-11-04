@@ -10,18 +10,11 @@ use Lucille\Request\Request;
 use Lucille\Request\Uri;
 use PHPUnit\Framework\TestCase;
 
-
-class TestRequest extends Request {
-    public function __construct(Uri $uri, HeaderCollection $headerCollection, RequestParameterCollection $parameterCollection) {
-        parent::__construct($uri, $headerCollection, $parameterCollection);
-    }
-}
-
 /**
  * @coversDefaultClass \Lucille\Request\Request
  */
 class RequestTest extends TestCase {
-    
+
     /**
      * @covers ::getUri
      * @covers ::__construct
@@ -36,7 +29,7 @@ class RequestTest extends TestCase {
         $request = $this->buildTestRequest();
         $this->assertInstanceOf(Uri::class, $request->getUri());
     }
-    
+
     /**
      * @covers ::getParam
      * @covers ::__construct
@@ -50,11 +43,11 @@ class RequestTest extends TestCase {
      */
     public function testReturnsParamByName() {
         $request = $this->buildTestRequest();
-        
+
         $this->assertInstanceOf(StringRequestParameter::class, $request->getParam('param1'));
         $this->assertInstanceOf(StringRequestParameter::class, $request->getParam('param2'));
         $this->assertInstanceOf(StringRequestParameter::class, $request->getParam('param3'));
-        
+
         $this->assertEquals('foo', $request->getParam('param1')->asString());
         $this->assertEquals('123', $request->getParam('param2')->asString());
         $this->assertEquals('baz', $request->getParam('param3')->asString());
@@ -63,7 +56,7 @@ class RequestTest extends TestCase {
     /**
      * @covers ::getParam
      * @covers ::__construct
-     *                                             
+     *
      * @uses   \Lucille\Request\Uri::__construct
      *
      * @uses   \Lucille\Exceptions\LucilleException::__construct
@@ -76,7 +69,7 @@ class RequestTest extends TestCase {
      */
     public function testParamByNameNotFoundThrowsException() {
         $this->expectException(RequestParameterNotFoundException::class);
-        
+
         $request = $this->buildTestRequest();
         $request->getParam('doesnotexist');
     }
@@ -101,12 +94,12 @@ class RequestTest extends TestCase {
             'HTTP_X_H1' => 'foo',
             'HTTP_X_H2' => 'bar'
         );
-        
+
         $request = $this->buildTestRequest($header);
         $collection = $request->getHeaderCollection();
         $this->assertInstanceOf(HeaderCollection::class, $collection);
     }
-    
+
     /**
      * @covers ::getParameterCollection
      * @uses   \Lucille\Request\Request::__construct
@@ -124,10 +117,10 @@ class RequestTest extends TestCase {
     public function testReturnsRequestParameterCollection() {
         $request = $this->buildTestRequest();
         $collection = $request->getParameterCollection();
-        
+
         $this->assertInstanceOf(RequestParameterCollection::class, $collection);
     }
-    
+
     /**
      * @covers ::getParameterCollection
      * @uses   \Lucille\Request\Request::__construct
@@ -151,16 +144,16 @@ class RequestTest extends TestCase {
                 'f3'   => 'c'
             )
         );
-        
+
         $request = $this->buildTestRequest(array(), $parameterSource);
-        $this->assertInstanceOf(RequestParameterCollection::class, $request->getParameterCollection('list1'  ));
+        $this->assertInstanceOf(RequestParameterCollection::class, $request->getParameterCollection('list1'));
     }
-    
-    
+
+
     private function buildTestRequest(array $headerSource = array(), array $parameterSource = null): TestRequest {
         $uri = new Uri('/document/demo/123');
         $headerCollection = HeaderCollection::fromSource($headerSource);
-        
+
         if ($parameterSource !== null) {
             $parameterCollection = RequestParameterCollection::fromArray($parameterSource);
         } else {
@@ -172,9 +165,8 @@ class RequestTest extends TestCase {
                 )
             );
         }
-        
+
         return new TestRequest($uri, $headerCollection, $parameterCollection);
     }
-    
+
 }
-    

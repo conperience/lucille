@@ -20,4 +20,3 @@ class UriPartTest extends TestCase {
     }
     
 }
-    

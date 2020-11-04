@@ -42,7 +42,7 @@ class StreamTest extends TestCase {
      * @uses   \Lucille\Components\Stream\Stream::unregisterStream
      * @uses   \Lucille\Components\Stream\StreamName
      * @uses   \Lucille\Directory
-     * 
+     *
      * @uses   \Lucille\Components\Stream\Exceptions\CannotRegisterStreamException
      * @uses   \Lucille\Exceptions\LucilleException
      */
@@ -56,7 +56,7 @@ class StreamTest extends TestCase {
      * @uses   \Lucille\Components\Stream\Stream::isRegistered
      * @uses   \Lucille\Components\Stream\StreamName
      * @uses   \Lucille\Directory
-     *                                      
+     *
      * @uses   \Lucille\Components\Stream\Exceptions\StreamAlreadyRegisteredException
      * @uses   \Lucille\Exceptions\LucilleException
      */

@@ -24,4 +24,3 @@ class NumericRequestParameterNameTest extends TestCase {
     }
     
 }
-    

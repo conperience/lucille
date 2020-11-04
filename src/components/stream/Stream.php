@@ -19,6 +19,8 @@ use Lucille\Components\Stream\Exceptions\StreamNotRegisteredException;
  * Class Stream
  *
  * @package Lucille\Components\Stream
+ *
+ * phpcs:disable PSR1.Methods.CamelCapsMethodName
  */
 class Stream {
     
@@ -184,7 +186,7 @@ class Stream {
      * @param int $whence whence
      * @return int
      */
-    public function stream_seek($offset, $whence ) {
+    public function stream_seek($offset, $whence) {
         return fseek($this->fp, $offset, $whence);
     }
     

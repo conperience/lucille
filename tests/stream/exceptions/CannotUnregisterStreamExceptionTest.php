@@ -26,4 +26,3 @@ class CannotUnregisterStreamExceptionTest extends TestCase {
     }
     
 }
-    

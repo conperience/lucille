@@ -16,30 +16,10 @@ use Lucille\Request\Body\EmptyRequestBody;
 use Lucille\Request\Parameter\RequestParameterCollection;
 use Lucille\Request\PutRequest;
 use Lucille\Request\Uri;
-use Lucille\Result\Result;
 use Lucille\Routing\PutRouter;
 
 use Lucille\Routing\PutRoutingChain;
 use PHPUnit\Framework\TestCase;
-    
-
-class PutRoutingChainTestCommand implements Command {
-    public function execute(): Result {
-    }
-}
-
-class PutRoutingChainTestRouter extends PutRouter {
-    public function route(PutRequest $request): Command {
-        return $this->getNext()->route($request);
-    }
-}
-
-class PutRoutingChainTestReturnsCommandRouter extends PutRouter {
-    public function route(PutRequest $request): Command {
-        return new PutRoutingChainTestCommand();
-    }
-}
-
 
 /**
  * @coversDefaultClass \Lucille\Routing\PutRoutingChain

@@ -21,4 +21,3 @@ class XpathQueryTest extends TestCase {
     }
     
 }
-    

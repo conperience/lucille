@@ -44,14 +44,15 @@ class GetRequestTest extends TestCase {
         $parameterCollection = new RequestParameterCollection();
         $parameterCollection->addParam(
             new StringRequestParameter(
-                new StringRequestParameterName('param1'), 'value1'
+                new StringRequestParameterName('param1'),
+                'value1'
             )
         );
         
         $request = new GetRequest($uri, $headerCollection, $parameterCollection);
         
-        $this->assertEquals('/demo',  $request->getUri()->asString());
-        $this->assertEquals('h1: v1',     $request->getHeaderCollection()->getHeader('h1')->asString());
+        $this->assertEquals('/demo', $request->getUri()->asString());
+        $this->assertEquals('h1: v1', $request->getHeaderCollection()->getHeader('h1')->asString());
         $this->assertEquals('value1', $request->getParameterCollection()->getParam('param1')->asString());
     }
     
