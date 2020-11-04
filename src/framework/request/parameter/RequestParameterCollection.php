@@ -11,6 +11,8 @@ namespace Lucille\Request\Parameter;
 
 use Lucille\Exceptions\RequestParameterCollectionNotFoundException;
 use Lucille\Exceptions\RequestParameterNotFoundException;
+use Lucille\Request\Parameter\StringRequestParameterName;
+use Lucille\Request\Parameter\NumericRequestParameterName;
 
 /**
  * Class RequestParameterCollection
@@ -35,11 +37,11 @@ class RequestParameterCollection implements \Countable,\IteratorAggregate {
      */
     public function addParam(RequestParameter $parameter): void {
         switch (get_class($parameter->getName())) {
-            case 'Lucille\Request\Parameter\StringRequestParameterName': {
+            case StringRequestParameterName::class: {
                 $this->parameters[$parameter->getName()->asString()] = $parameter;
                 break;
             }
-            case 'Lucille\Request\Parameter\NumericRequestParameterName': {
+            case NumericRequestParameterName::class: {
                 $this->parameters[$parameter->getName()->asInt()] = $parameter;
                 break;
             }
