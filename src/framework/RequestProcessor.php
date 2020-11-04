@@ -28,6 +28,7 @@ use Lucille\Request\PostRequest;
 use Lucille\Request\PutRequest;
 use Lucille\Request\PatchRequest;
 use Lucille\Request\DeleteRequest;
+use Lucille\Request\GetRequest;
 
 /**
  * Class RequestProcessor
@@ -124,7 +125,7 @@ class RequestProcessor {
         try {
             $chain = null;
             switch (get_class($request)) {
-                case 'Lucille\Request\GetRequest': {
+                case GetRequest::class: {
                     $chain = $this->getRoutingChain;
                     break;
                 }
