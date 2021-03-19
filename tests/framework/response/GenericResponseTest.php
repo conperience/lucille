@@ -28,7 +28,7 @@ class GenericResponseTest extends TestCase {
         $res = new TestResponse();
         
         $this->assertInstanceOf(HeaderCollection::class, $res->getHeaderCollection());
-        $this->assertEquals(0, count($res->getHeaderCollection()));
+        $this->assertCount(0, $res->getHeaderCollection());
     }
     
     

@@ -29,7 +29,7 @@ class HeaderCollectionTest extends TestCase {
      */
     public function testCountableReturnsHeaderCountIfNoHeadersAreSet() {
         $collection = new HeaderCollection();
-        $this->assertEquals(0, count($collection));
+        $this->assertCount(0, $collection);
     }
     
     /**
@@ -41,7 +41,7 @@ class HeaderCollectionTest extends TestCase {
         $collection = new HeaderCollection();
         $collection->addHeader(new Header('HTTP_X_HEADER1', 'bar'));
         $collection->addHeader(new Header('HTTP_X_HEADER2', 'foo'));
-        $this->assertEquals(2, count($collection));
+        $this->assertCount(2, $collection);
     }
     
     /**
