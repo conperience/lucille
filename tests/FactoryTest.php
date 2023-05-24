@@ -29,7 +29,7 @@ class FactoryTest extends TestCase {
     
     private $factory;
     
-    public function setUp(): void {
+    protected function setUp(): void {
         $this->factory = new Factory();
     }
     
