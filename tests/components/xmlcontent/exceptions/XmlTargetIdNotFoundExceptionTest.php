@@ -35,7 +35,7 @@ class XmlTargetIdNotFoundExceptionTest extends TestCase {
         try {
             throw new XmlTargetIdNotFoundException('node1');
         } catch (XmlTargetIdNotFoundException $e) {
-            $this->assertEquals('node1', $e->getTargetId());
+            $this->assertSame('node1', $e->getTargetId());
         }
     }
     

@@ -55,7 +55,7 @@ class GenericXmlContentTest extends TestCase {
         $doc = new TestXmlContent();
         $doc->loadDocument($dom);
 
-        $this->assertEquals($dom, $doc->getContentDom());
+        $this->assertSame($dom, $doc->getContentDom());
     }
     
     /**
@@ -88,7 +88,7 @@ class GenericXmlContentTest extends TestCase {
         $doc = new TestXmlContent();
         $doc->loadDocument($dom);
 
-        $this->assertEquals($dom, $doc->getContentDom());
+        $this->assertSame($dom, $doc->getContentDom());
     }
     
     /**
@@ -148,7 +148,7 @@ class GenericXmlContentTest extends TestCase {
         $nodeList = $doc->query(new XPathQuery("//*[@id='20']"));
         
         $this->assertInstanceOf(\DOMNodeList::class, $nodeList);
-        $this->assertEquals(2, $nodeList->length);
+        $this->assertSame(2, $nodeList->length);
     }
     
     /**
@@ -210,7 +210,7 @@ class GenericXmlContentTest extends TestCase {
         $xp = $doc->getContentXP();
         
         $this->assertInstanceOf(\DOMXPath::class, $xp);
-        $this->assertEquals('demo', $xp->query("//doc[@id='10']/@label")->item(0)->nodeValue);
+        $this->assertSame('demo', $xp->query("//doc[@id='10']/@label")->item(0)->nodeValue);
     }
 
     /**

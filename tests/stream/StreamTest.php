@@ -109,7 +109,7 @@ class StreamTest extends TestCase {
      */
     public function testGetRegisteredPathReturnsSchemePathString() {
         Stream::registerStream(new StreamName('templates'), new Directory(__DIR__.'/data'));
-        $this->assertEquals(__DIR__.'/data', Stream::getRegisteredPath(new StreamName('templates')));
+        $this->assertSame(__DIR__.'/data', Stream::getRegisteredPath(new StreamName('templates')));
     }
     
     /**
@@ -138,7 +138,7 @@ class StreamTest extends TestCase {
     public function testTranslateReturnsFullPath() {
         Stream::unregisterStream(new StreamName('templates'));
         Stream::registerStream(new StreamName('templates'), new Directory(__DIR__.'/data'));
-        $this->assertEquals(__DIR__.'/data/demo/1.xsl', Stream::translate('templates://demo/1.xsl'));
+        $this->assertSame(__DIR__.'/data/demo/1.xsl', Stream::translate('templates://demo/1.xsl'));
     }
     
     /**
@@ -153,7 +153,7 @@ class StreamTest extends TestCase {
     public function testTranslateRootDirectoryReturnsPath() {
         Stream::unregisterStream(new StreamName('templates'));
         Stream::registerStream(new StreamName('templates'), new Directory(__DIR__.'/data'));
-        $this->assertEquals(__DIR__.'/data/1.xsl', Stream::translate('templates:///1.xsl'));
+        $this->assertSame(__DIR__.'/data/1.xsl', Stream::translate('templates:///1.xsl'));
     }
     
     /**
@@ -167,7 +167,7 @@ class StreamTest extends TestCase {
      */
     public function testTranslateUnregisteredStreamReturnsInitialPath() {
         Stream::unregisterStream(new StreamName('templates'));
-        $this->assertEquals('templates://demo/1.xsl', Stream::translate('templates://demo/1.xsl'));
+        $this->assertSame('templates://demo/1.xsl', Stream::translate('templates://demo/1.xsl'));
     }
     
     /**
@@ -192,7 +192,7 @@ class StreamTest extends TestCase {
         
         $handle = fopen('templates://test.txt', 'r');
         $data = fread($handle, 100);
-        $this->assertEquals("123\n", $data);
+        $this->assertSame("123\n", $data);
     }
     
 }

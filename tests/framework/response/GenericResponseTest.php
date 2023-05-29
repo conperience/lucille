@@ -41,7 +41,7 @@ class GenericResponseTest extends TestCase {
         $res = new TestResponse();
         $res->setResponseCode(340);
         
-        $this->assertEquals(340, $res->getResponseCode());
+        $this->assertSame(340, $res->getResponseCode());
     }
 
     /**

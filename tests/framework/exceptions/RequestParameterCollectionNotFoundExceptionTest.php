@@ -19,7 +19,7 @@ class RequestParameterCollectionNotFoundExceptionTest extends TestCase {
         try {
             throw new RequestParameterCollectionNotFoundException('list01');
         } catch (RequestParameterCollectionNotFoundException $e) {
-            $this->assertEquals('list01', $e->getParameterCollectionName());
+            $this->assertSame('list01', $e->getParameterCollectionName());
         }
     }
     

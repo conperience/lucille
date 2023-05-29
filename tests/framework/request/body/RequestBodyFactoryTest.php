@@ -28,7 +28,7 @@ class RequestBodyFactoryTest extends TestCase {
     public function testFromStreamReturnsRawRequestBody() {
         $body = RequestBodyFactory::fromStream(__DIR__.'/fixtures/body.txt');
         $this->assertInstanceOf(RawRequestBody::class, $body);
-        $this->assertEquals("demo=foo\nbar=123\n", $body->asString());
+        $this->assertSame("demo=foo\nbar=123\n", $body->asString());
     }
     
 }

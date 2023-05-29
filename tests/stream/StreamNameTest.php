@@ -23,7 +23,7 @@ class StreamNameTest extends TestCase {
      */
     public function testReturnsInitialStreamName() {
         $streamName = new StreamName('test');
-        $this->assertEquals('test', $streamName->asString());
+        $this->assertSame('test', $streamName->asString());
     }
     
 }

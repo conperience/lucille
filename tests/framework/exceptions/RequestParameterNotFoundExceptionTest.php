@@ -19,7 +19,7 @@ class RequestParameterNotFoundExceptionTest extends TestCase {
         try {
             throw new RequestParameterNotFoundException('param1');
         } catch (RequestParameterNotFoundException $e) {
-            $this->assertEquals('param1', $e->getParameterName());
+            $this->assertSame('param1', $e->getParameterName());
         }
     }
     

@@ -21,7 +21,7 @@ class StreamNotRegisteredExceptionTest extends TestCase {
         try {
             throw new StreamNotRegisteredException(new StreamName('templates'));
         } catch (StreamNotRegisteredException $e) {
-            $this->assertEquals('templates', $e->getProtocolName()->asString());
+            $this->assertSame('templates', $e->getProtocolName()->asString());
         }
     }
     

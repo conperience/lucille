@@ -26,7 +26,7 @@ class FilenameTest extends TestCase {
      */
     public function testReturnsInitialFilenameAsString() {
         $filename = new Filename(TEST_FILE);
-        $this->assertEquals(TEST_FILE, $filename->asString());
+        $this->assertSame(TEST_FILE, $filename->asString());
     }
     
     /**

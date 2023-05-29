@@ -36,7 +36,7 @@ class LucilleExceptionTest extends TestCase {
         } catch (LucilleException $e) {
             $full = substr($e->getFullMessage(), 0, 56);
             $expected = "Lucille Framework Error (12) 'generic exception' at line";
-            $this->assertEquals($expected, $full);
+            $this->assertSame($expected, $full);
         }
     }
     

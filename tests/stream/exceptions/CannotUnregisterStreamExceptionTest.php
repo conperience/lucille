@@ -21,7 +21,7 @@ class CannotUnregisterStreamExceptionTest extends TestCase {
         try {
             throw new CannotUnregisterStreamException(new StreamName('templates'));
         } catch (CannotUnregisterStreamException $e) {
-            $this->assertEquals('templates', $e->getProtocolName()->asString());
+            $this->assertSame('templates', $e->getProtocolName()->asString());
         }
     }
     

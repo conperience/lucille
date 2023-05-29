@@ -22,7 +22,7 @@ class LoadingXslStylesheetFailedExceptionTest extends TestCase {
         try {
             throw new LoadingXslStylesheetFailedException($xslFile);
         } catch (LoadingXslStylesheetFailedException $e) {
-            $this->assertEquals($xslFile, $e->getStylesheetFilename());
+            $this->assertSame($xslFile, $e->getStylesheetFilename());
         }
     }
     

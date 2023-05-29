@@ -31,7 +31,7 @@ class LoadingXmlFailedException extends TestCase {
         try {
             throw new LoadingXmlFileFailedException(new Filename(TEST_FILE));
         } catch (LoadingXmlFileFailedException $e) {
-            $this->assertEquals(TEST_FILE, $e->getFilename()->asString());
+            $this->assertSame(TEST_FILE, $e->getFilename()->asString());
         }
     }
     

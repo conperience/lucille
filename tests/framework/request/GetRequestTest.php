@@ -51,9 +51,9 @@ class GetRequestTest extends TestCase {
         
         $request = new GetRequest($uri, $headerCollection, $parameterCollection);
         
-        $this->assertEquals('/demo', $request->getUri()->asString());
-        $this->assertEquals('h1: v1', $request->getHeaderCollection()->getHeader('h1')->asString());
-        $this->assertEquals('value1', $request->getParameterCollection()->getParam('param1')->asString());
+        $this->assertSame('/demo', $request->getUri()->asString());
+        $this->assertSame('h1: v1', $request->getHeaderCollection()->getHeader('h1')->asString());
+        $this->assertSame('value1', $request->getParameterCollection()->getParam('param1')->asString());
     }
     
 }

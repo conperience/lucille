@@ -48,9 +48,9 @@ class RequestTest extends TestCase {
         $this->assertInstanceOf(StringRequestParameter::class, $request->getParam('param2'));
         $this->assertInstanceOf(StringRequestParameter::class, $request->getParam('param3'));
 
-        $this->assertEquals('foo', $request->getParam('param1')->asString());
-        $this->assertEquals('123', $request->getParam('param2')->asString());
-        $this->assertEquals('baz', $request->getParam('param3')->asString());
+        $this->assertSame('foo', $request->getParam('param1')->asString());
+        $this->assertSame('123', $request->getParam('param2')->asString());
+        $this->assertSame('baz', $request->getParam('param3')->asString());
     }
 
     /**

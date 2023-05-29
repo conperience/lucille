@@ -17,7 +17,7 @@ class XpathQueryTest extends TestCase {
      */
     public function testReturnsInitialXpathQueryString() {
         $xp = new XPathQuery('/root/@label');
-        $this->assertEquals('/root/@label', $xp->asString());
+        $this->assertSame('/root/@label', $xp->asString());
     }
     
 }

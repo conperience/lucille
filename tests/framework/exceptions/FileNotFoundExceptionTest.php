@@ -19,7 +19,7 @@ class FileNotFoundExceptionTest extends TestCase {
         try {
             throw new FileNotFoundException('/tmp/foo.log');
         } catch (FileNotFoundException $e) {
-            $this->assertEquals('/tmp/foo.log', $e->getFilename());
+            $this->assertSame('/tmp/foo.log', $e->getFilename());
         }
     }
     

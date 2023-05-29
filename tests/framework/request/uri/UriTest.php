@@ -18,7 +18,7 @@ class UriTest extends TestCase {
      */
     public function testReturnsInitialUri() {
         $uri = new Uri('/foo/bar/1234');
-        $this->assertEquals('/foo/bar/1234', $uri->asString());
+        $this->assertSame('/foo/bar/1234', $uri->asString());
     }
     
     /**
@@ -27,7 +27,7 @@ class UriTest extends TestCase {
      */
     public function testReturnsInitialUriAsPath() {
         $uri = new Uri('/foo/bar/1234/test.xml?test=123#foo');
-        $this->assertEquals('/foo/bar/1234/test.xml', $uri->asString());
+        $this->assertSame('/foo/bar/1234/test.xml', $uri->asString());
     }
     
     /**
@@ -37,7 +37,7 @@ class UriTest extends TestCase {
     public function testReturnsOriginUri() {
         $x = '/foo/bar/1234/test.xml?test=123#foo';
         $uri = new Uri($x);
-        $this->assertEquals($x, $uri->originUriAsString());
+        $this->assertSame($x, $uri->originUriAsString());
     }
     
     /**
@@ -110,9 +110,9 @@ class UriTest extends TestCase {
      */
     public function testReturnsUriPartByIndex() {
         $uri = new Uri('/document/demo/123');
-        $this->assertEquals('document', $uri->getPart(0)->asString());
-        $this->assertEquals('demo', $uri->getPart(1)->asString());
-        $this->assertEquals('123', $uri->getPart(2)->asString());
+        $this->assertSame('document', $uri->getPart(0)->asString());
+        $this->assertSame('demo', $uri->getPart(1)->asString());
+        $this->assertSame('123', $uri->getPart(2)->asString());
     }
     
     /**
@@ -127,7 +127,7 @@ class UriTest extends TestCase {
         $this->expectException(UriPartIndexOutOfBoundsException::class);
         
         $uri = new Uri('/document/demo/123');
-        $this->assertEquals('document', $uri->getPart(-2)->asString());
+        $this->assertSame('document', $uri->getPart(-2)->asString());
     }
     
     /**

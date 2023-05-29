@@ -16,7 +16,7 @@ class UriPartTest extends TestCase {
      */
     public function testReturnsInitialUriPartAsString() {
         $part = new UriPart('demo');
-        $this->assertEquals('demo', $part->asString());
+        $this->assertSame('demo', $part->asString());
     }
     
 }

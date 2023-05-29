@@ -19,7 +19,7 @@ class StringRequestParameterTest extends TestCase {
      */
     public function testReturnsInitialParameterName() {
         $param = new StringRequestParameter(new StringRequestParameterName('param1'), 'bar');
-        $this->assertEquals('param1', $param->getName()->asString());
+        $this->assertSame('param1', $param->getName()->asString());
     }
     
     /**
@@ -29,7 +29,7 @@ class StringRequestParameterTest extends TestCase {
      */
     public function testReturnsInitialValueAsString() {
         $param = new StringRequestParameter(new StringRequestParameterName('test'), '1000');
-        $this->assertEquals('1000', $param->asString());
+        $this->assertSame('1000', $param->asString());
         $this->assertIsString($param->asString());
     }
 
@@ -40,7 +40,7 @@ class StringRequestParameterTest extends TestCase {
      */
     public function testReturnsInitialValueAsInt() {
         $param = new StringRequestParameter(new StringRequestParameterName('test'), '1000');
-        $this->assertEquals(1000, $param->asInt());
+        $this->assertSame(1000, $param->asInt());
         $this->assertIsInt($param->asInt());
     }
 
@@ -51,7 +51,7 @@ class StringRequestParameterTest extends TestCase {
      */
     public function testReturnsInitialValueAsFloat() {
         $param = new StringRequestParameter(new StringRequestParameterName('test'), '12.7');
-        $this->assertEquals(12.7, $param->asFloat());
+        $this->assertSame(12.7, $param->asFloat());
         $this->assertIsFloat($param->asFloat());
     }
         

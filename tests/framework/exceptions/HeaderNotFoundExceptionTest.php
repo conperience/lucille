@@ -19,7 +19,7 @@ class HeaderNotFoundExceptionTest extends TestCase {
         try {
             throw new HeaderNotFoundException('HTTP_X_API');
         } catch (HeaderNotFoundException $e) {
-            $this->assertEquals('HTTP_X_API', $e->getHeaderName());
+            $this->assertSame('HTTP_X_API', $e->getHeaderName());
         }
     }
     

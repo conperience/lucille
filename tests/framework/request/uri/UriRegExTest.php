@@ -16,7 +16,7 @@ class UriRegExTest extends TestCase {
      */
     public function testReturnsInitialRegexPattern() {
         $regex = new UriRegEx('#(.*)#');
-        $this->assertEquals('#(.*)#', $regex->asString());
+        $this->assertSame('#(.*)#', $regex->asString());
     }
     
 }

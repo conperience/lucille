@@ -27,7 +27,7 @@ class DirectoryTest extends TestCase {
      */
     public function testReturnsInitialDirectoryPathAsString() {
         $dir = new Directory('/tmp');
-        $this->assertEquals('/tmp', $dir->asString());
+        $this->assertSame('/tmp', $dir->asString());
     }
     
     /**

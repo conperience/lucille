@@ -16,7 +16,7 @@ class HeaderTest extends TestCase {
      */
     public function testReturnsHeaderName() {
         $header = new Header('header_name', 'demo123');
-        $this->assertEquals('header_name', $header->getName());
+        $this->assertSame('header_name', $header->getName());
     }
     
     /**
@@ -25,7 +25,7 @@ class HeaderTest extends TestCase {
      */
     public function testReturnsHeaderValue() {
         $header = new Header('header_name', 'demo123');
-        $this->assertEquals('demo123', $header->getValue());
+        $this->assertSame('demo123', $header->getValue());
     }
 
     /**
@@ -36,7 +36,7 @@ class HeaderTest extends TestCase {
      */
     public function testReturnsHeaderAsString() {
         $header = new Header('header_name', 'demo123');
-        $this->assertEquals('header_name: demo123', $header->asString());
+        $this->assertSame('header_name: demo123', $header->asString());
     }
     
 }
