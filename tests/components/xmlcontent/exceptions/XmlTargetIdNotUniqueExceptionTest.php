@@ -35,7 +35,7 @@ class XmlTargetIdNotUniqueExceptionTest extends TestCase {
         try {
             throw new XmlTargetIdNotUniqueException('node2');
         } catch (XmlTargetIdNotUniqueException $e) {
-            $this->assertEquals('node2', $e->getTargetId());
+            $this->assertSame('node2', $e->getTargetId());
         }
     }
     

@@ -21,7 +21,7 @@ class HeaderCollectionTest extends TestCase {
         $header = new Header('HTTP_X_HEADER1', 'bar123');
         $collection = new HeaderCollection();
         $collection->addHeader($header);
-        $this->assertEquals($header, $collection->getHeader('HTTP_X_HEADER1'));
+        $this->assertSame($header, $collection->getHeader('HTTP_X_HEADER1'));
     }
 
     /**
@@ -84,11 +84,11 @@ class HeaderCollectionTest extends TestCase {
         $header1 = $collection->getHeader('HTTP_X_HEADER1');
         $header2 = $collection->getHeader('HTTP_X_HEADER2');
         
-        $this->assertEquals('HTTP_X_HEADER1', $header1->getName());
-        $this->assertEquals('foo', $header1->getValue());
+        $this->assertSame('HTTP_X_HEADER1', $header1->getName());
+        $this->assertSame('foo', $header1->getValue());
         
-        $this->assertEquals('HTTP_X_HEADER2', $header2->getName());
-        $this->assertEquals('bar', $header2->getValue());
+        $this->assertSame('HTTP_X_HEADER2', $header2->getName());
+        $this->assertSame('bar', $header2->getValue());
     }
 
 }

@@ -20,7 +20,7 @@ class XhtmlContentTest extends TestCase {
         $xhtml1 = new XhtmlContent(new Filename(__DIR__.'/data/test.xhtml'));
         
         $node = $xhtml1->getContentXP()->query('//html:p/text()')->item(0);
-        $this->assertEquals('test', $node->nodeValue);
+        $this->assertSame('test', $node->nodeValue);
     }
     
     /**
@@ -36,7 +36,7 @@ class XhtmlContentTest extends TestCase {
         $xhtml1->loadDocument($dom);
         
         $node = $xhtml1->getContentXP()->query('//html:p/text()')->item(0);
-        $this->assertEquals('test', $node->nodeValue);
+        $this->assertSame('test', $node->nodeValue);
     }
     
     /**

@@ -21,7 +21,7 @@ class StreamAlreadyRegisteredExceptionTest extends TestCase {
         try {
             throw new StreamAlreadyRegisteredException(new StreamName('templates'));
         } catch (StreamAlreadyRegisteredException $e) {
-            $this->assertEquals('templates', $e->getProtocolName()->asString());
+            $this->assertSame('templates', $e->getProtocolName()->asString());
         }
     }
     

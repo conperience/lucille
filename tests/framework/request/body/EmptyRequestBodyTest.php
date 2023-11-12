@@ -15,7 +15,7 @@ class EmptyRequestBodyTest extends TestCase {
      */
     public function testReturnsInitialContent() {
         $body = new EmptyRequestBody();
-        $this->assertEquals('', $body->asString());
+        $this->assertSame('', $body->asString());
     }
     
 }

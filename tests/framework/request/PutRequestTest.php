@@ -38,9 +38,9 @@ class PutRequestTest extends TestCase {
     public function testPostRequest() {
         $request = $this->buildPutRequest();
         
-        $this->assertEquals('/demo', $request->getUri()->asString());
-        $this->assertEquals('h1: v1', $request->getHeaderCollection()->getHeader('h1')->asString());
-        $this->assertEquals('value1', $request->getParameterCollection()->getParam('param1')->asString());
+        $this->assertSame('/demo', $request->getUri()->asString());
+        $this->assertSame('h1: v1', $request->getHeaderCollection()->getHeader('h1')->asString());
+        $this->assertSame('value1', $request->getParameterCollection()->getParam('param1')->asString());
     }
     
     /**
@@ -58,7 +58,7 @@ class PutRequestTest extends TestCase {
     public function testGetRawRequestBody() {
         $request = $this->buildPutRequest();
         
-        $this->assertEquals('foo bar', $request->getBody()->asString());
+        $this->assertSame('foo bar', $request->getBody()->asString());
     }
     
     private function buildPutRequest(): PutRequest {

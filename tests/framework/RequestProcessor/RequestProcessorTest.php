@@ -55,7 +55,7 @@ class RequestProcessorTest extends TestCase {
         $chain = new GetRoutingChain();
         $proc->addRoutingChain($chain);
         
-        $this->assertEquals($chain, $this->getPrivateClassProperty($proc, 'getRoutingChain'));
+        $this->assertSame($chain, $this->getPrivateClassProperty($proc, 'getRoutingChain'));
     }
 
     /**
@@ -67,7 +67,7 @@ class RequestProcessorTest extends TestCase {
         $chain = new PostRoutingChain();
         $proc->addRoutingChain($chain);
 
-        $this->assertEquals($chain, $this->getPrivateClassProperty($proc, 'postRoutingChain'));
+        $this->assertSame($chain, $this->getPrivateClassProperty($proc, 'postRoutingChain'));
     }
 
     /**
@@ -79,7 +79,7 @@ class RequestProcessorTest extends TestCase {
         $chain = new PutRoutingChain();
         $proc->addRoutingChain($chain);
         
-        $this->assertEquals($chain, $this->getPrivateClassProperty($proc, 'putRoutingChain'));
+        $this->assertSame($chain, $this->getPrivateClassProperty($proc, 'putRoutingChain'));
     }
 
     /**
@@ -91,7 +91,7 @@ class RequestProcessorTest extends TestCase {
         $chain = new PatchRoutingChain();
         $proc->addRoutingChain($chain);
 
-        $this->assertEquals($chain, $this->getPrivateClassProperty($proc, 'patchRoutingChain'));
+        $this->assertSame($chain, $this->getPrivateClassProperty($proc, 'patchRoutingChain'));
     }
 
     /**
@@ -103,7 +103,7 @@ class RequestProcessorTest extends TestCase {
         $chain = new DeleteRoutingChain();
         $proc->addRoutingChain($chain);
 
-        $this->assertEquals($chain, $this->getPrivateClassProperty($proc, 'deleteRoutingChain'));
+        $this->assertSame($chain, $this->getPrivateClassProperty($proc, 'deleteRoutingChain'));
     }
 
     /**
@@ -115,7 +115,7 @@ class RequestProcessorTest extends TestCase {
         $chain = new ResultRoutingChain();
         $proc->addRoutingChain($chain);
 
-        $this->assertEquals($chain, $this->getPrivateClassProperty($proc, 'resultRoutingChain'));
+        $this->assertSame($chain, $this->getPrivateClassProperty($proc, 'resultRoutingChain'));
     }
     
     /**

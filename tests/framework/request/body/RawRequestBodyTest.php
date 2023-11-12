@@ -17,7 +17,7 @@ class RawRequestBodyTest extends TestCase {
     public function testReturnsInitialContent() {
         $str = "test string\ndemo=foo";
         $body = new RawRequestBody($str);
-        $this->assertEquals($str, $body->asString());
+        $this->assertSame($str, $body->asString());
     }
     
 }

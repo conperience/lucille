@@ -19,7 +19,7 @@ class StringRequestParameterNameTest extends TestCase {
      */
     public function testGetValueReturnsInitialParameterNameTrimmed() {
         $param = new StringRequestParameter(new StringRequestParameterName('    paramname             '), 'bar');
-        $this->assertEquals('paramname', $param->getName()->asString());
+        $this->assertSame('paramname', $param->getName()->asString());
         $this->assertIsString($param->getName()->asString());
     }
     

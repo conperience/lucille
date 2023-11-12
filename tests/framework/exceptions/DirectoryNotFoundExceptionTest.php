@@ -20,7 +20,7 @@ class DirectoryNotFoundExceptionTest extends TestCase {
         try {
             throw new DirectoryNotFoundException('/tmp');
         } catch (DirectoryNotFoundException $e) {
-            $this->assertEquals('/tmp', $e->getPath());
+            $this->assertSame('/tmp', $e->getPath());
         }
     }
     
