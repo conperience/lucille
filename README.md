@@ -146,7 +146,7 @@ if ($request->getUri()->isEqual( new Uri('/contact') ) {
     ...
 }
 
-// check if request URI matches a specified regular expression
+// check if request URI begins with a specified value
 // - example request uri: /articles/my-first-article/view.xml
 if ($request->getUri()->beginsWith( new Uri('/articles/') ) {
     ...
