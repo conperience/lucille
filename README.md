@@ -8,6 +8,7 @@ It is designed to quickly create restful services and web services/websites that
 [![Type Coverage](https://shepherd.dev/github/conperience/lucille/coverage.svg)](https://shepherd.dev/github/conperience/lucille)
 
 ## Requirements
+Minimum requirements:
 * PHP 7.2+
   * ext/dom *(when using the XML/XHTML component)*
   * ext/xsl *(when using the XSL component)*
